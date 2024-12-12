@@ -1,6 +1,6 @@
 #pragma once
+#include <random>
 #include <string>
-
 #include "Lamp_Interface.h"
 
 namespace Lamp
@@ -65,4 +65,8 @@ namespace Lamp
 
 	LAMP_API void LogInternal(const char* file, const char* function, uint32_t line, LAMP_LOGCategory category, const char* fmt, ...);
 
+	
+	static const std::random_device rd;     // Only used once to initialise (seed) engine
+    LAMP_API int RandInt(int max);
+	LAMP_API int RandIntRange(int max, int min);
 }

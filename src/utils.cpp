@@ -1,4 +1,4 @@
-#include "Lamp/utils.h"
+#include "utils.h"
 #include <codecvt>
 
 namespace Lamp
@@ -9,4 +9,18 @@ namespace Lamp
 		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
 		return converter.from_bytes(string);
 	}
+
+    int RandInt(int max)
+    {
+        std::mt19937 rng(rd);
+        std::uniform_int_distribution<int> uni(0, max);
+        return uni(rng);
+    }
+
+    int RandIntRange(int max, int min)
+    {
+        std::mt19937 rng(rd);
+        std::uniform_int_distribution<int> uni(min, max);
+        return uni(rng);
+    }
 }
