@@ -24,7 +24,7 @@ namespace Lamp
 		const bool m_Minimized;
 
 	private:
-		DISALLOW_MOVE_COPY(WindowSizeChangedEvent)
+		NO_MOVE_COPY(WindowSizeChangedEvent)
 	};
 
 	class Window
@@ -39,7 +39,7 @@ namespace Lamp
 		int GetHeight() const { return m_Height; }
 
 	private:
-		DISALLOW_MOVE_COPY(Window)
+		NO_MOVE_COPY(Window)
 
 		static LRESULT WINAPI StaticWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		LRESULT CALLBACK WndProc(UINT, WPARAM, LPARAM);

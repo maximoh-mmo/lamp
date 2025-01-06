@@ -47,7 +47,7 @@ namespace Lamp
 		LAMP_API void UnRegister(EventID id, size_t callerUID);
 
 	private:
-		DISALLOW_MOVE_COPY(EventBus)
+		NO_MOVE_COPY(EventBus)
 
 		struct EventHandler
 		{

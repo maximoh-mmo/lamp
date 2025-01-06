@@ -32,17 +32,17 @@ namespace Lamp
 		} while(0)
 	#endif
 
-	#define DISALLOW_COPYING(type) \
+	#define NO_COPY(type) \
 		type(const type& other) = delete; \
 		type& operator=(const type& other) = delete;
 
-	#define DISALLOW_MOVING(type) \
+	#define NO_MOVE(type) \
 		type(const type&& other) = delete; \
 		type& operator=(const type&& other) = delete;
 
-	#define DISALLOW_MOVE_COPY(type)\
-        DISALLOW_COPYING(type)\
-        DISALLOW_MOVING(type)
+	#define NO_MOVE_COPY(type)\
+        NO_COPY(type)\
+        NO_MOVE(type)
 
 	#define LAMP_STATIC_ASSERT(condition) static_assert(condition, "")
 
@@ -64,9 +64,10 @@ namespace Lamp
 	LAMP_API std::wstring ConvertStringWstring(const std::string& string);
 
 	LAMP_API void LogInternal(const char* file, const char* function, uint32_t line, LAMP_LOGCategory category, const char* fmt, ...);
+	    
 
-	
-	static const std::random_device rd;     // Only used once to initialise (seed) engine
+    static std::random_device rd;     // Only used once to initialise (seed) engine
+
     LAMP_API int RandInt(int max);
 	LAMP_API int RandIntRange(int max, int min);
 }
