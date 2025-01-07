@@ -1,5 +1,7 @@
+#include "stdafx.h"
+
 #include "EventBus.h"
-#include "utils.h"
+#include "util.h"
 
 Lamp::EventBus* Lamp::EventBus::GetInstance()
 {

@@ -1,5 +1,7 @@
+#include "stdafx.h"
+
 #include "Window.h"
-#include "utils.h"
+#include "util.h"
 #include <locale>
 #include "EventBus.h"
 

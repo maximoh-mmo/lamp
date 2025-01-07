@@ -1,6 +1,8 @@
-#include "utils.h"
+#include "stdafx.h"
+
 #include <codecvt>
 #include <cstdarg>
+#include "util.h"
 
 
 namespace Lamp

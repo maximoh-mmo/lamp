@@ -1,16 +1,24 @@
 #pragma once
+
 #include <random>
 #include <string>
 #include "Lamp_Interface.h"
 
 namespace Lamp
 {
+
+	//This macro can be used to disable the C4100 warning ('identifier' : unreferenced formal parameter) for specific parameters 
+	#define LAMP_UNUSED(param) (void)param
+
 	enum class LAMP_LOGCategory
 	{
 		Info,
 		Warning,
 		Error
 	};
+
+	LAMP_API bool AssertInternal(const char* file, const char* function, uint32_t line, bool& callAgain, const char* condition, const char* fmt, ...);
+
 	#ifdef TARGET_DEBUG
 	#define LAMP_ASSERTF(condition, fmt, ...) \
 		do \

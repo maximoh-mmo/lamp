@@ -3,7 +3,7 @@
 #include "Lamp_Interface.h"
 #include <windows.h>
 #include "EventBus.h"
-#include "utils.h"
+#include "util.h"
 
 namespace Lamp
 {
@@ -16,9 +16,9 @@ namespace Lamp
 			, m_Minimized(minimized)
 		{
 		}
-		virtual ~WindowSizeChangedEvent() override = default;
+		~WindowSizeChangedEvent() override = default;
 		static const EventID ID = LampEventID::WindowSizeChanged;
-		virtual EventID GetID() const override { return ID; }
+		EventID GetID() const override { return ID; }
 		const int m_Width;;
 		const int m_Height;
 		const bool m_Minimized;
